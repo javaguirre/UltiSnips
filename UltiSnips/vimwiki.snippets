@@ -1,0 +1,21 @@
+global !p
+def today_date_iso():
+    import datetime
+    now = datetime.datetime.now()
+    return now.strftime("%Y-%m-%d")
+def now_time():
+    import datetime
+    now = datetime.datetime.now()
+    return now.strftime("%H:%M")
+def time_stamp_iso():
+    import datetime
+    now = datetime.datetime.now()
+    return now.strftime("%Y-%m-%d %H:%M")
+endglobal
+
+snippet log "Log entry" b
+${1:today} ${2:now}: ${3:client}/${4:project}/${5:task}: ${6:note}
+endsnippet
+snippet stop "Stop Log entry" b
+${1:today} ${2:now}: ${3:stop} xxx
+endsnippet
